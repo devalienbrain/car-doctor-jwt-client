@@ -14,18 +14,18 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-blue-800 font-black" : ""
+            isPending ? "pending" : isActive ? "text-green-600 font-black" : ""
           }
         >
           Home
         </NavLink>
         <NavLink
-          to="/mycart"
+          to="/bookings"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-blue-800 font-black" : ""
+            isPending ? "pending" : isActive ? "text-green-600 font-black" : ""
           }
         >
-          My Cart
+          Bookings
         </NavLink>
       </div>
     </>
@@ -54,7 +54,7 @@ const NavBar = () => {
       setTheme("light");
       localStorage.setItem("theme", "light");
     }
-    console.log("Previous Theme:", theme);
+    // console.log("Previous Theme:", theme);
   };
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const NavBar = () => {
     const html = document.documentElement;
     html.setAttribute("data-theme", localStorageTheme);
     html.classList.add(localStorageTheme);
-    console.log("Local Storage Theme:", localStorageTheme);
+    // console.log("Local Storage Theme:", localStorageTheme);
   }, []);
 
   return (
@@ -95,7 +95,9 @@ const NavBar = () => {
               {links}
             </ul>
           </div>
-          <span className="normal-case text-xl text-blue-900">HudaHudi</span>
+          <span className="normal-case text-xl text-red-700 font-black">
+            <span className="text-green-700">DRIVE D</span>octor
+          </span>
         </div>
         <div className="navbar-center justify-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
