@@ -5,7 +5,7 @@ import { AuthContext } from "../../../../Provider/AuthProvider";
 const Checkout = () => {
   const serviceData = useLoaderData();
   // console.log(serviceData);
-  const { _id, title } = serviceData;
+  const { _id, title, price, img } = serviceData;
 
   const user = useContext(AuthContext);
   // console.log(user.user);
@@ -19,8 +19,10 @@ const Checkout = () => {
     const message = form.message.value;
 
     const buyer = {
-      // service_id: _id,
-      // service_title: title,
+      service_id: _id,
+      service_title: title,
+      img,
+      price,
       firstName,
       lastName,
       phone,

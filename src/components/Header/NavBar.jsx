@@ -68,7 +68,6 @@ const NavBar = () => {
 
   return (
     <>
-      <ToastContainer></ToastContainer>
       <div className="navbar font-bold border-b-2 drop-shadow-2xl z-50">
         <div className="navbar-start">
           <div className="dropdown">
@@ -96,7 +95,7 @@ const NavBar = () => {
             </ul>
           </div>
           <span className="normal-case text-xl text-red-700 font-black">
-            <span className="text-green-700">DRIVE D</span>octor
+            <span className="text-green-700">DRIVE </span>DOCTOR
           </span>
         </div>
         <div className="navbar-center justify-center hidden lg:flex">
@@ -136,6 +135,7 @@ const NavBar = () => {
           ></FiSun>
         )}
       </div>
+      <ToastContainer></ToastContainer>
     </>
   );
 };
