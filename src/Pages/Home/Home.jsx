@@ -5,18 +5,24 @@ import HappyClientsSection from "./HappyClients/HappyClientsSection";
 import HeaderBanner from "./HeaderBanner/HeaderBanner";
 import LogosSection from "./LogoSection/LogoSection";
 import Services from "./Services/Services";
-import "../Home/Styles/StyleHome.css";
 
 const Home = () => {
   return (
-    <div className="container mx-auto">
+    <div>
       <HeaderBanner></HeaderBanner>
-      <FactsSection></FactsSection>
-      <Services></Services>
+      <div className="container mx-auto">
+        <Services></Services>
+        <FactsSection></FactsSection>
+      </div>
+
       <FeaturedProducts></FeaturedProducts>
-      <LogosSection></LogosSection>
-      <HappyClientsSection></HappyClientsSection>
-      <FaqSection></FaqSection>
+
+      <div className="container mx-auto">
+        <HappyClientsSection></HappyClientsSection>
+        <FaqSection></FaqSection>
+
+        <LogosSection></LogosSection>
+      </div>
     </div>
   );
 };

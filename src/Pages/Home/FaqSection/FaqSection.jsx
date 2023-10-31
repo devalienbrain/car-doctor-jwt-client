@@ -7,8 +7,8 @@ function FaqSection() {
       </h2>
       <div className="hero">
         <div className="hero-content flex-col lg:flex-row">
-          <img src={q} className="max-w-sm" alt="FAQ" />
-          <div className="flex flex-col gap-2 text-xs">
+          <img src={q} className="max-w-sm p-10" alt="FAQ" />
+          <div className="flex flex-col gap-1 text-xs">
             <FAQItem
               question="What are the most important things I should know about riding a bike?"
               answer="Safety First! Always obey the rules of the road. Obey all traffic signals, signs, and laws. Get in the mindset of “driving” your bike—not just “riding” your bike. This will help you be a more focused and legally compliant bike rider."
@@ -34,10 +34,12 @@ function FaqSection() {
 
 function FAQItem({ question, answer }) {
   return (
-    <div className="collapse collapse-arrow card shadow-xl p-5">
+    <div className="collapse collapse-arrow card p-3 hover:shadow-lg">
       <input type="radio" name="my-accordion-2" checked="checked" />
-      <div className="collapse-title text-xl font-medium">{question}</div>
-      <div className="collapse-content">
+      <div className="collapse-title text-sm font-medium text-left">
+        {question}
+      </div>
+      <div className="collapse-content text-xs font-extralight text-left">
         <p>{answer}</p>
       </div>
     </div>
