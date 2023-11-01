@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import NavBar from "../../components/Header/NavBar";
 
 const Login = () => {
   const { signIn, loginGoogle, loginGithub } = useContext(AuthContext);
@@ -61,6 +62,7 @@ const Login = () => {
 
   return (
     <>
+      <NavBar></NavBar>
       <ToastContainer></ToastContainer>
       <div className="hero min-h-screen bg-base-200 py-10 px-5">
         <div className="hero-content flex-col">

@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
     <div className="border-t-2">
-      <footer className="footer p-10 bg-white text-slate-800 ">
+      <footer className="footer p-10">
         <div className="flex flex-col text-left">
-          <h3 className="font-bold">CAR DOCTOR</h3>
+          <h3 className="font-bold text-red-700">CAR DOCTOR</h3>
           <p className="flex flex-col text-left">
             <small>All rights preserved by dr-fatiha</small>
             <small>Copyright@2023</small>

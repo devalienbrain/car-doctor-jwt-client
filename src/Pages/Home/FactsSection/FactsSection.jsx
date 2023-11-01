@@ -4,13 +4,10 @@ import customers from "../../../../public/Resources/customers.png";
 import email from "../../../../public/Resources/email.png";
 function FactsSection() {
   return (
-    <section className="facts-sec">
-      <h3 className="common-h3">Some Facts</h3>
-      <p className="common-p">
-        There are many variations of passages of Lorem Ipsum available, but{" "}
-        <br /> the majority have suffered alteration.
-      </p>
-      <div className="facts-card-container">
+    <section className="font-bold my-7">
+      <h3 className="text-3xl py-7">Some Facts</h3>
+
+      <div className="flex flex-col md:flex-row justify-around">
         <FactCard imageSrc={ribbon} number="54" title="Awards Winnings" />
         <FactCard imageSrc={projects} number="1458" title="Project Finished" />
         <FactCard imageSrc={customers} number="590" title="Clients Worked" />
@@ -22,7 +19,7 @@ function FactsSection() {
 
 function FactCard({ imageSrc, number, title }) {
   return (
-    <div className="facts-card">
+    <div className="p-20 border rounded-xl hover:shadow-xl hover:border-2">
       <img className="mx-auto" src={imageSrc} alt={title} />
       <h1 className="number">{number}</h1>
       <p>{title}</p>

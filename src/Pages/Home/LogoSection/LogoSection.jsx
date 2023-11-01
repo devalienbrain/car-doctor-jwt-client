@@ -8,20 +8,20 @@ import walmart from "../../../../public/Resources/Walmart.svg";
 
 function LogosSection() {
   return (
-    <main className="default-margin">
-      {/* Logos section starts */}
-      <section className="logos-sec default-section-top-gap">
-        <div className="logo-container">
-          <Logo logoSrc={alibaba} />
-          <Logo logoSrc={amazon} />
-          <Logo logoSrc={daraz} />
-          <Logo logoSrc={ebay} />
-          <Logo logoSrc={rakuten} />
-          <Logo logoSrc={target} />
-          <Logo logoSrc={walmart} />
-        </div>
-      </section>
-    </main>
+    <section className="container mx-auto">
+      <h2 className="text-center text-4xl font-bold mb-6">
+        Our Sponsor Partners
+      </h2>
+      <div className="p-7 flex justify-around align-middle items-center gap-3 border-b-1 border-t-1">
+        <Logo logoSrc={alibaba} />
+        <Logo logoSrc={amazon} />
+        <Logo logoSrc={daraz} />
+        <Logo logoSrc={ebay} />
+        <Logo logoSrc={rakuten} />
+        <Logo logoSrc={target} />
+        <Logo logoSrc={walmart} />
+      </div>
+    </section>
   );
 }
 

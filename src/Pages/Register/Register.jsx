@@ -6,6 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
+import NavBar from "../../components/Header/NavBar";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -66,6 +67,7 @@ const Register = () => {
 
   return (
     <>
+      <NavBar></NavBar>
       <ToastContainer></ToastContainer>{" "}
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col">

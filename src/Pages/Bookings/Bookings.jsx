@@ -3,6 +3,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import BookingCard from "./BookingCard";
 
 import bg from "../../../public/Resources/cool-background.png";
+import NavBar from "../../components/Header/NavBar";
 
 const Bookings = () => {
   const { user } = useContext(AuthContext);
@@ -19,13 +20,16 @@ const Bookings = () => {
   }, [url]);
 
   return (
-    <div style={{ backgroundImage: `url( ${bg})` }}>
-      <div className="flex flex-col gap-12 my-10 p-10">
-        {bookings.map((booking) => (
-          <BookingCard key={booking._id} booking={booking}></BookingCard>
-        ))}
+    <>
+      <NavBar></NavBar>
+      <div style={{ backgroundImage: `url( ${bg})` }}>
+        <div className="flex flex-col gap-12 my-10 p-10">
+          {bookings.map((booking) => (
+            <BookingCard key={booking._id} booking={booking}></BookingCard>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
