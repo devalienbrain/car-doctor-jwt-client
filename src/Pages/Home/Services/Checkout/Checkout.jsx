@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../../Provider/AuthProvider";
+import NavBar from "../../../../components/Header/NavBar";
 
 const Checkout = () => {
   const serviceData = useLoaderData();
@@ -44,6 +45,7 @@ const Checkout = () => {
 
   return (
     <>
+      <NavBar></NavBar>
       <div>
         <h1 className="py-10 font-bold text-red-700 text-xl">
           Checkout: {title}

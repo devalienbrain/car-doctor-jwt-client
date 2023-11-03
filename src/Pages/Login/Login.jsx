@@ -8,6 +8,7 @@ import { FaGithub } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import NavBar from "../../components/Header/NavBar";
+import axios from "axios";
 
 const Login = () => {
   const { signIn, loginGoogle, loginGithub } = useContext(AuthContext);
@@ -21,16 +22,25 @@ const Login = () => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    // console.log(email, password);
     e.target.email.value = "";
     e.target.password.value = "";
     setErrorMessage("");
     signIn(email, password)
       .then((res) => {
-        console.log(res.user);
+        // console.log(res.user);
         toast("You Are Successfuly Logged In");
 
-        navigate(location?.state ? location.state : "/");
+        // Steps to get access token from server side
+        const user = { email };
+        axios
+          .post("http://localhost:3000/jwt", user, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log(res.data);
+            navigate(location?.state ? location.state : "/");
+          });
       })
       .catch((error) => {
         console.error(error);
@@ -124,7 +134,7 @@ const Login = () => {
                 ERROR: {errorMessage}
               </p>
             )}
-            <p className="text-red-900 font-bold text-center text-xs mb-5 px-4">
+            <p className="text-yellow-900 font-bold text-center text-base mb-5 px-4">
               Not register before?{" "}
               <Link to="/register"> please register first </Link>
             </p>

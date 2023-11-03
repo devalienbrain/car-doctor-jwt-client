@@ -5,6 +5,7 @@ import HappyClientsSection from "./HappyClients/HappyClientsSection";
 import HeaderBanner from "./HeaderBanner/HeaderBanner";
 import LogosSection from "./LogoSection/LogoSection";
 import Services from "./Services/Services";
+import VideoCompo from "./VideoCompo/VideoCompo";
 
 const Home = () => {
   return (
@@ -20,7 +21,7 @@ const Home = () => {
       <div className="container mx-auto">
         <HappyClientsSection></HappyClientsSection>
         <FaqSection></FaqSection>
-
+        <VideoCompo></VideoCompo>
         <LogosSection></LogosSection>
       </div>
     </div>

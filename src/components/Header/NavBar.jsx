@@ -5,6 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import { FiSun } from "react-icons/fi";
 import { MdDarkMode } from "react-icons/md";
+import logo from "../../../public/Resources/logo2.png";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -14,7 +15,7 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-green-600 font-black" : ""
+            isPending ? "pending" : isActive ? "text-yellow-600 font-black" : ""
           }
         >
           Home
@@ -22,10 +23,10 @@ const NavBar = () => {
         <NavLink
           to="/bookings"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-green-600 font-black" : ""
+            isPending ? "pending" : isActive ? "text-yellow-600 font-black" : ""
           }
         >
-          Bookings
+          My Orders
         </NavLink>
       </div>
     </>
@@ -68,7 +69,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="navbar shadow-md z-50">
+      <div className="navbar shadow-md z-50 text-red-500">
         <div className="container  mx-auto font-bold  ">
           <div className="navbar-start flex justify-start">
             <div className="dropdown lg:hidden">
@@ -95,8 +96,14 @@ const NavBar = () => {
                 {links}
               </ul>
             </div>
-            <div className="normal-case text-xl text-green-700 font-black">
-              DRIVE<span className="text-red-700"> DOCTOR</span>
+            <div className="flex justify-start gap-1 align-middle items-center">
+              <div>
+                <img className="w-6" src={logo} />
+              </div>
+              <div className="normal-case text-3xl text-green-700 font-black">
+                {" "}
+                uper<span className="text-red-700"> Food</span>
+              </div>
             </div>
           </div>
           <div className="navbar-center justify-center hidden lg:flex">
