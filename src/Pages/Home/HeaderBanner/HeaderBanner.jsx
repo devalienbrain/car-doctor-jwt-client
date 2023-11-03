@@ -19,12 +19,12 @@ function HeaderBanner() {
         {/* <img className="w-full object-cover" src={img} alt="" /> */}
       </div>
       <div className="container mx-auto p-10">
-        <div className="text-center max-w-2xl mx-auto">
-          <h1 className="mb-5 text-2xl md:text-5xl text-white font-black">
+        <div className="text-center max-w-5xl mx-auto">
+          <h1 className="mb-5 text-xl md:text-3xl text-white font-black">
             EAT HEALTHY
           </h1>
           <h3
-            className="mb-5 text-red-600 text-5xl uppercase font-black bg-gradient-to-r from-purple-500 to-pink-800 bg-clip-text text-transparent
+            className="mb-5 text-red-600 text-3xl md:text-4xl uppercase font-black bg-gradient-to-r from-purple-500 to-pink-800 bg-clip-text text-transparent
 "
           >
             You are what you eat! so dont be fast cheap easy or fake

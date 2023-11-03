@@ -13,6 +13,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
 
   const url = `http://localhost:3000/buyers?email=${user?.email}`;
+  // const url = `http://localhost:3000/buyers?email=man@manush.com`;
 
   useEffect(() => {
     // fetch(url)

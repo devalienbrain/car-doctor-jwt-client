@@ -11,7 +11,7 @@ const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
   const links = (
     <>
-      <div className="flex flex-col lg:flex-row gap-4">
+      <div className="flex flex-col lg:flex-row gap-4 text-red-600 font-black bg-gradient-to-r from-purple-500 to-pink-800 bg-clip-text text-transparent">
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
@@ -27,6 +27,14 @@ const NavBar = () => {
           }
         >
           My Orders
+        </NavLink>
+        <NavLink
+          to="/bookings"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-yellow-600 font-black" : ""
+          }
+        >
+          Recipies
         </NavLink>
       </div>
     </>
@@ -69,8 +77,8 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="navbar shadow-md z-50 text-red-500">
-        <div className="container  mx-auto font-bold  ">
+      <div className="navbar shadow-md z-50">
+        <div className="container mx-auto font-bold text-lime-400">
           <div className="navbar-start flex justify-start">
             <div className="dropdown lg:hidden">
               <label tabIndex={0} className="btn btn-ghost">
@@ -91,18 +99,17 @@ const NavBar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] py-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-[1] py-2 shadow bg-base-50 rounded-box w-52"
               >
                 {links}
               </ul>
             </div>
-            <div className="flex justify-start gap-1 align-middle items-center">
+            <div className="flex justify-start align-middle items-center">
               <div>
-                <img className="w-6" src={logo} />
+                <img className="w-24 rounded-full" src={logo} />
               </div>
-              <div className="normal-case text-3xl text-green-700 font-black">
-                {" "}
-                uper<span className="text-red-700"> Food</span>
+              <div className="normal-case text-3xl  font-black">
+                Super<span className="">foods</span>
               </div>
             </div>
           </div>
@@ -122,11 +129,9 @@ const NavBar = () => {
                 <span>{user?.displayName}</span>
               </div>
             ) : (
-              <div className="text-xs">
+              <div className="flex justify-end items-center text-xs">
                 <Link to="/login">
-                  <button className="px-2 py-1 border border-blue hover:text-white hover:bg-blue-800 drop-shadow-lg rounded-md">
-                    Login
-                  </button>
+                  <p className=" hover:text-green-800">Login</p>
                 </Link>
               </div>
             )}
