@@ -15,7 +15,7 @@ const NavBar = () => {
         <NavLink
           to="/"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-yellow-600 font-black" : ""
+            isPending ? "pending" : isActive ? "text-lime-600  font-black" : ""
           }
         >
           Home
@@ -23,18 +23,18 @@ const NavBar = () => {
         <NavLink
           to="/bookings"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-yellow-600 font-black" : ""
+            isPending ? "pending" : isActive ? "text-lime-600 font-black" : ""
           }
         >
           My Orders
         </NavLink>
         <NavLink
-          to="/bookings"
+          to="/products"
           className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-yellow-600 font-black" : ""
+            isPending ? "pending" : isActive ? "text-lime-600 font-black" : ""
           }
         >
-          Recipies
+          Products
         </NavLink>
       </div>
     </>

@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../../public/firebase/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 
@@ -45,10 +46,31 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      // console.log("Current Active User Details:", currentUser);
+      const userEmail = currentUser?.email || user?.email;
+      const loggedUser = { email: userEmail };
+      console.log("Current Active USER:", currentUser);
       setUser(currentUser);
       setLoading(false);
+      // IF USER EXISTS PROVIDE A TOKEN
+      if (currentUser) {
+        axios
+          .post("http://localhost:3000/jwt", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log("Token Response: ", res.data);
+          });
+      } else {
+        axios
+          .post("http://localhost:3000/logout", loggedUser, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log("Token Response For LogOut: ", res.data);
+          }); // Added a missing closing parenthesis and semicolon here
+      }
     });
+
     return () => {
       unSubscribe();
     };

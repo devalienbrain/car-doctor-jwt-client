@@ -7,6 +7,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import Checkout from "../Pages/Home/Services/Checkout/Checkout";
 import Bookings from "../Pages/Bookings/Bookings";
+import Products from "../Pages/Products/Products";
 
 const routes = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const routes = createBrowserRouter([
             <Bookings></Bookings>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/products",
+        element: <Products></Products>,
       },
     ],
   },
